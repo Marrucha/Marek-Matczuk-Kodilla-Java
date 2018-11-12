@@ -7,10 +7,10 @@ public class TestingMain {
 
     public static void main(String[] args) {
 
-        Calculator kalk = new Calculator(1,2);
-        if (kalk.add()==3)
+        Calculator kalk = new Calculator();
+        if (kalk.add(1,2)==3)
             System.out.println("Calculator.add() function is ok");
-        if (kalk.substract()==-1)
+        if (kalk.substract(1,2)==-1)
             System.out.println("Calculator.substract() function is ok");
     }
 }
