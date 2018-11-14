@@ -5,20 +5,34 @@ import java.util.*;
 public class ShapeCollector {
     private ArrayList<Shape> figures = new ArrayList<Shape>();
 
-    public void addFigure(Shape shape)
-    {}
-    public void removeFigure(Shape shape)
-    {}
-    public Shape getFigure(int n) {
-        Shape o = new Triangle(999,999,"Test");
-        return o;}
-
-    public String showFigures() {
-        return "";}
-
-    public int getFiguresNumber(){
-        return 9999999;
+    public void addFigure(Shape shape) {
+        figures.add(shape);
     }
 
+    public void removeFigure(Shape shape) {
+        figures.remove(shape);
+    }
 
+    public Shape getFigure(int n) {
+        if (n < 0 || n > figures.size()) {
+            return null;
+        } else {
+            Shape o = figures.get(n);
+            return o;
+        }
+    }
+
+    public String showFigures() {
+        String string ="";
+        for(Shape figura:figures){
+            string = string + "\n" + figura;
+        }
+        return string;
+    }
+
+    public int getFiguresNumber() {
+        return figures.size();
+    }
 }
+
+

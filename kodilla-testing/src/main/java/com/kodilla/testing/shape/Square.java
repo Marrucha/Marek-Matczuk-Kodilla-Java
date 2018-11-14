@@ -22,6 +22,6 @@ public class Square implements Shape{
 
     @Override
     public String toString() {
-        return name + "field:" + getShapeField();
+        return name + " " + " field:" + getShapeField();
     }
 }

@@ -75,5 +75,20 @@ public class ShapetestSuite {
         Assert.assertEquals(null,shapeCollector.getFigure(shapeCollector.getFiguresNumber()+1));
     }
 
+    @Test
+    public void showCount(){
+        ShapeCollector shapeCollector = new ShapeCollector();
+        Shape triangle = new Triangle(23, 12, "Trójkąt" );
+        Shape circle = new Circle(23, "Koło" );
+        Shape square = new Square(4,  "Kwadrat" );
+        Shape square2 = new Square(12,  "Kwadrat" );
+
+        shapeCollector.addFigure(triangle);
+        shapeCollector.addFigure(circle);
+        shapeCollector.addFigure(square);
+        shapeCollector.addFigure(square2);
+
+        System.out.println(shapeCollector.showFigures());
+    }
 
 }
