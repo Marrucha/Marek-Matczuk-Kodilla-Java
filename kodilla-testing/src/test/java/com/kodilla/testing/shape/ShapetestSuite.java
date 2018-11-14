@@ -64,7 +64,7 @@ public class ShapetestSuite {
         ShapeCollector shapeCollector = new ShapeCollector();
         Shape triangle = new Triangle(23, 12, "Trójkąt" );
         shapeCollector.addFigure(triangle);
-        Assert.assertEquals(triangle,shapeCollector.getFigure(-1));
+        Assert.assertEquals(null,shapeCollector.getFigure(-1));
     }
 
     @Test
@@ -72,7 +72,7 @@ public class ShapetestSuite {
         ShapeCollector shapeCollector = new ShapeCollector();
         Shape triangle = new Triangle(23, 12, "Trójkąt" );
         shapeCollector.addFigure(triangle);
-        Assert.assertEquals(triangle,shapeCollector.getFigure(shapeCollector.getFiguresNumber()+1));
+        Assert.assertEquals(null,shapeCollector.getFigure(shapeCollector.getFiguresNumber()+1));
     }
 
 
