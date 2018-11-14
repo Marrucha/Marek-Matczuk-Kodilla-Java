@@ -9,8 +9,9 @@ public class ShapeCollector {
     {}
     public void removeFigure(Shape shape)
     {}
-    public String getFigure(int n) {
-        return "";}
+    public Shape getFigure(int n) {
+        Shape o = new Triangle(999,999,"Test");
+        return o;}
 
     public String showFigures() {
         return "";}

@@ -33,7 +33,7 @@ public class ShapetestSuite {
     }
 
     @Test
-    public void removeAddFigure(){
+    public void testRemoveFigure(){
         ShapeCollector shapeCollector = new ShapeCollector();
         Shape triangle = new Triangle(23, 12, "Trójkąt" );
 
@@ -44,7 +44,7 @@ public class ShapetestSuite {
     }
 
     @Test
-    public void getFigure(){
+    public void testGetFigure(){
         ShapeCollector shapeCollector = new ShapeCollector();
         Shape triangle = new Triangle(23, 12, "Trójkąt" );
         Shape circle = new Circle(23, "Koło" );
@@ -56,7 +56,24 @@ public class ShapetestSuite {
         shapeCollector.addFigure(square);
         shapeCollector.addFigure(square2);
 
-        Assert.assertEquals("Kwadrat" + " field:" + Math.pow(4,2) ,shapeCollector.getFigure(3));
+        Assert.assertEquals(square,shapeCollector.getFigure(1));
     }
+
+    @Test
+    public void testGetFigureMinusIndex(){
+        ShapeCollector shapeCollector = new ShapeCollector();
+        Shape triangle = new Triangle(23, 12, "Trójkąt" );
+        shapeCollector.addFigure(triangle);
+        Assert.assertEquals(triangle,shapeCollector.getFigure(-1));
+    }
+
+    @Test
+    public void testGetFigureOverIndex(){
+        ShapeCollector shapeCollector = new ShapeCollector();
+        Shape triangle = new Triangle(23, 12, "Trójkąt" );
+        shapeCollector.addFigure(triangle);
+        Assert.assertEquals(triangle,shapeCollector.getFigure(shapeCollector.getFiguresNumber()+1));
+    }
+
 
 }
