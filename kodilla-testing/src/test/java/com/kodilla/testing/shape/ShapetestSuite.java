@@ -56,7 +56,7 @@ public class ShapetestSuite {
         shapeCollector.addFigure(square);
         shapeCollector.addFigure(square2);
 
-        Assert.assertEquals(square,shapeCollector.getFigure(1));
+        Assert.assertEquals(circle,shapeCollector.getFigure(1));
     }
 
     @Test
