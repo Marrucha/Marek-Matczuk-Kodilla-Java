@@ -89,6 +89,7 @@ public class ShapetestSuite {
         shapeCollector.addFigure(square2);
 
         System.out.println(shapeCollector.showFigures());
+        Assert.assertEquals(5,shapeCollector.countLines(shapeCollector.showFigures()));
     }
 
 }
