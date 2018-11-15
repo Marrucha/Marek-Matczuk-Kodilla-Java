@@ -1,6 +1,7 @@
 package com.kodilla.testing.collection;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,6 +24,7 @@ public class CollectionTestSuite {
         ArrayList<Integer> emptyArray = new ArrayList<Integer>();
         if(one.exterminator(emptyArray).size() == 0)
             System.out.println("Table is empty");
+        Assert.assertEquals(0,one.exterminator(emptyArray).size());
     }
 
     @Test
@@ -49,5 +51,6 @@ public class CollectionTestSuite {
         System.out.println("ERROR:Table is populated by odd Number");
         else
         System.out.println("OK - Odd numbers were exterminated");
+        Assert.assertEquals(0,zn);
     }
 }
