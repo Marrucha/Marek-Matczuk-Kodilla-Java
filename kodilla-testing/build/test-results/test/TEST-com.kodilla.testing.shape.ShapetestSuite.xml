@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.testing.shape.ShapetestSuite" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-11-18T16:01:38" hostname="DESKTOP-AM29IKA" time="0.008">
+  <properties/>
+  <testcase name="showCount" classname="com.kodilla.testing.shape.ShapetestSuite" time="0.004"/>
+  <testcase name="testGetFigureMinusIndex" classname="com.kodilla.testing.shape.ShapetestSuite" time="0.0"/>
+  <testcase name="testRemoveFigure" classname="com.kodilla.testing.shape.ShapetestSuite" time="0.001"/>
+  <testcase name="testAddFigure" classname="com.kodilla.testing.shape.ShapetestSuite" time="0.001"/>
+  <testcase name="testGetFigure" classname="com.kodilla.testing.shape.ShapetestSuite" time="0.0"/>
+  <testcase name="testGetFigureOverIndex" classname="com.kodilla.testing.shape.ShapetestSuite" time="0.001"/>
+  <system-out><![CDATA[This is the beginning of tests.
+Preparing to execute test #1
+
+TrĂłjkÄ…t field:138.0
+KoĹ‚o field:1661.9025137490005
+Kwadrat  field:16.0
+Kwadrat  field:144.0
+Preparing to execute test #2
+Preparing to execute test #3
+Preparing to execute test #4
+Preparing to execute test #5
+Preparing to execute test #6
+All tests are finished.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -75,6 +75,9 @@ public class ForumStatisticsSuite {
         Mockito.when(statMock.commentsCount()).thenReturn(commentsCountVal);
 
         Assert.assertEquals(0 ,countStatistics.calculateAdvStatistics(statMock).size());
+        Assert.assertEquals(0 ,countStatistics.calculateAdvStatistics(statMock).size());
+        Assert.assertEquals(0 ,countStatistics.calculateAdvStatistics(statMock).size());
+
 
     }
 

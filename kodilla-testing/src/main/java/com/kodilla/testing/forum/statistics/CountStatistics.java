@@ -1,7 +1,5 @@
 package com.kodilla.testing.forum.statistics;
 
-import org.mockito.Mockito;
-
 import java.util.*;
 
 public class CountStatistics {
