@@ -52,5 +52,8 @@ public class CollectionTestSuite {
         else
         System.out.println("OK - Odd numbers were exterminated");
         Assert.assertEquals(0,zn);
+        Assert.assertEquals(2,evenArray.get(0).intValue());
+        Assert.assertEquals(66,evenArray.get(1).intValue());
+        Assert.assertEquals(1566,evenArray.get(2).intValue());
     }
 }
