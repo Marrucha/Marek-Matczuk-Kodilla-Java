@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.math.*;
 
 
-public class worldPopulationTesting {
+public class WorldPopulationTesting {
 
     @Test
     public void testingPopulationCount() {
