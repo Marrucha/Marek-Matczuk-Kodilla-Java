@@ -1,27 +1,27 @@
 package com.kodilla.exception.main;
 
-import com.kodilla.exception.test.FirstChallange;
-
+import com.kodilla.exception.test.ExceptionHandling;
 
 public class ExceptionModuleRunner {
     public static void main (String args[]){
 
-        //   FileReader fileReader = new FileReader();
-        //   fileReader.readFile();
+        ExceptionHandling exceptionHandling = new ExceptionHandling();
+        System.out.println(exceptionHandling.processErrors(2.00,1.5));
 
-        FirstChallange firstChallenge = new FirstChallange();
-        try {
-            double result = firstChallenge.divide(3, 0);
-            System.out.println(result);
-        }
-        catch (ArithmeticException a){
-            System.out.println("Division by 0");
-        }
 
-        finally {
-            System.out.println("\n" + "REMEMBER!!! - division by Zero is not possible");
-        }
 
+
+
+
+        /*        FileReader fileReader = new FileReader();
+        try
+        {
+            fileReader.readFile();
+        }
+        catch(FileReaderException e)
+        {
+            System.out.println("Error handling");
+        }*/
     }
 }
 
