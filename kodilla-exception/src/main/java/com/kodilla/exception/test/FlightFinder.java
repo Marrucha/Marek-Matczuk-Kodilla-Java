@@ -6,11 +6,11 @@ public class FlightFinder  {
     private Map <String,Boolean> flightConnections = new HashMap<String,Boolean>();
 
     public boolean findFlight (Flight flight) throws RouteNotFoundException {
-        try {
-           return flightConnections.get(flight.getArrivalAirport());
-        } catch (Exception e) {
+           if(!flightConnections.get(flight.getArrivalAirport()))
             throw new RouteNotFoundException();
-        }
+           else
+            return flightConnections.get(flight.getArrivalAirport());
+
     }
 
     public void mapFiller() {
