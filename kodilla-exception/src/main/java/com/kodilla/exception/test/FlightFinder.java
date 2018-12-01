@@ -5,11 +5,14 @@ import java.util.*;
 public class FlightFinder  {
     private Map <String,Boolean> flightConnections = new HashMap<String,Boolean>();
 
-    public boolean findFlight (Flight flight) throws RouteNotFoundException {
-           if(!flightConnections.get(flight.getArrivalAirport()))
+    public boolean findFlight (Flight flight) throws RouteNotFoundException,RouteNotAvailable {
+
+        if(flightConnections.get(flight.getArrivalAirport())==null)
             throw new RouteNotFoundException();
-           else
-            return flightConnections.get(flight.getArrivalAirport());
+        if(!flightConnections.get(flight.getArrivalAirport()))
+            throw new RouteNotAvailable();
+        else
+           return flightConnections.get(flight.getArrivalAirport());
 
     }
 
