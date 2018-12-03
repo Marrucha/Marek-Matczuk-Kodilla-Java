@@ -1,9 +1,9 @@
 package com.kodilla.good.patterns.challenges;
 
 public class Payment {
-    Order order;
-    String paymentType;
-    boolean paymentDone;
+    private Order order;
+    private String paymentType;
+    private boolean paymentDone;
 
     public Payment(Order order, String paymentType, boolean paymentDone) {
         this.order = order;
