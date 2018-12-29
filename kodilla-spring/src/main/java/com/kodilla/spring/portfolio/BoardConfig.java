@@ -31,8 +31,7 @@ public class BoardConfig {
         @Bean(name = "toDo")
         @Scope("prototype")
         public TaskList getToDo() {
-        return new TaskList();
-    }
+        return new TaskList(); }
 
         @Bean(name = "inProgress")
         @Scope("prototype")
