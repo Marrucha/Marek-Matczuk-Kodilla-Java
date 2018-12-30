@@ -1,9 +1,9 @@
 package com.kodilla.patterns.factory.tasks;
 
 public class PaintingTask implements Task{
-    String taskName ;
-    String color ;
-    String whatToPaint ;
+    private String taskName ;
+    private String color ;
+    private String whatToPaint ;
     private boolean taskSheet = false;
     private boolean taskDone = false;
 
@@ -16,7 +16,7 @@ public class PaintingTask implements Task{
 
     @Override
     public void executeTask() {
-        if (!taskSheet && color != "white" && whatToPaint == "fence") {
+        if (!taskSheet && !color.equals("white") && whatToPaint.equals("fence")) {
             taskDone = true;
             taskSheet = true;}
         else

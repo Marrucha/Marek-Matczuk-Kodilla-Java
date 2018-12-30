@@ -1,9 +1,9 @@
 package com.kodilla.patterns.factory.tasks;
 
 public class DrivingTask implements Task {
-    String taskName;
-    String where;
-    String using;
+    private String taskName;
+    private String where;
+    private String using;
     private boolean taskSheet = false;
     private boolean taskDone = false;
 
@@ -15,7 +15,7 @@ public class DrivingTask implements Task {
 
     @Override
     public void executeTask() {
-        if (!taskSheet && using == "car" && where == "home"){
+        if (!taskSheet && using.equals("car") && where.equals("home")){
             taskDone = true;
             taskSheet = true;}
         else
