@@ -11,7 +11,7 @@ public class BigmacTestSuite {
             BigMac bigMac = new BigMac.BigMacBuilder()
                     .bun(BigMac.BUN_SEZAM)
                     .sauce(BigMac.SAUCE_1000_ISLANDS)
-                    .burgers(3)
+                    .burgers(7)
                     .ingredient("Sałata")
                     .ingredient("Cebula")
                     .ingredient("Krewetki")
