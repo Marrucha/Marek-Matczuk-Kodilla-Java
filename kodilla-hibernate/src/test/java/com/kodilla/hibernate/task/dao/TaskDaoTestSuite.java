@@ -1,4 +1,4 @@
-package com.kodilla.hibernate.task.DAO;
+package com.kodilla.hibernate.task.dao;
 
 import com.kodilla.hibernate.task.Task;
 import com.kodilla.hibernate.task.TaskFinancialDetails;

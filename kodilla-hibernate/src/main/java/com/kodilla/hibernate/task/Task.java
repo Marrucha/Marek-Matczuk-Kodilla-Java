@@ -5,7 +5,17 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.*;
 
-@Entity
+@NamedQueries({
+            @NamedQuery(name = "Task.retrieveLongTasks",query = "FROM task WHERE duration>10"),
+            @NamedQuery(name = "Task.retrieveShortTasks",query = "FROM task WHERE duration<=10")}
+)
+
+@NamedNativeQuery(name = "Task.retrieveTasksWithEnoughTime",query = "SELECT * FROM TASKS" +
+        " WHERE DATEDIFF(DATE_ADD(CREATED,INTERVAL DURATION DAY), NOW())>5",
+            resultClass = Task.class
+)
+
+@Entity (name = "task")
 @Table(name = "TASKS")
 public class Task {
     private int id;
@@ -17,7 +27,7 @@ public class Task {
 
     @ManyToOne
     @JoinColumn (name = "TASKLIST_ID")
-    public TaskList getTasklist() {
+    public TaskList getTaskList() {
         return taskList;
     }
 
