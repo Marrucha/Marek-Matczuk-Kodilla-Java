@@ -9,4 +9,6 @@ include 'kodilla-spring-intro'
 include 'kodilla-spring'
 include 'kodilla-patterns'
 include 'kodilla-JDBC'
+include 'kodilla-hibernate'
+include 'kodilla-spring-web'
 
