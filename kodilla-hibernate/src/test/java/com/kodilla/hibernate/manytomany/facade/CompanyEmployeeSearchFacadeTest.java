@@ -29,7 +29,7 @@ public class CompanyEmployeeSearchFacadeTest {
     @Test
     public void retrieveCompanyLikeTest() {
 
-/*        //Given
+     //Given
         Employee janKowalski = new Employee("Jan", "Kowalski");
         Employee andrzejNowak = new Employee("Andrzej", "Nowak");
         Employee agnieszkaHolland = new Employee("Agnieszka", "Holland");
@@ -69,15 +69,15 @@ public class CompanyEmployeeSearchFacadeTest {
             companyDao.delete(ubisoft);
             companyDao.delete(blizzard);
         } catch (Exception e) {
-            //do nothing
-        }*/
+            System.out.println("ERROR");
+        }
 
     }
 
     @Test
     public void retrieveEmployeeLikeTest() {
 
-/*        //Given
+     //Given
 
         Employee janKowalski = new Employee("Jan", "Kowalski");
         Employee andrzejNowak = new Employee("Andrzej", "Nowak");
@@ -107,7 +107,6 @@ public class CompanyEmployeeSearchFacadeTest {
         resultCompanyList.add(ubisoft);
 
         resultEmployeeList.add(janKowalski);
-        resultEmployeeList.add(agnieszkaHolland);
 
 
         //When
@@ -121,6 +120,6 @@ public class CompanyEmployeeSearchFacadeTest {
             companyDao.delete(blizzard);
         } catch (Exception e) {
             //do nothing
-        }*/
+        }
     }
 }

@@ -44,10 +44,6 @@ public class CompanyDaoTestSuite {
         agnieszkaHolland.getCompanies().add(ubisoft);
         agnieszkaHolland.getCompanies().add(blizzard);
 
-        companyDao.save(microsoft);
-        companyDao.save(ubisoft);
-        companyDao.save(blizzard);
-
         //When
         companyDao.save(microsoft);
         int microsoftId = microsoft.getId();
@@ -62,13 +58,13 @@ public class CompanyDaoTestSuite {
         Assert.assertNotEquals(0, blizzardId);
 
         //CleanUp
-        /*try {
+        try {
           companyDao.delete(microsoftId);
            companyDao.delete(ubisoftId);
            companyDao.delete(blizzardId);
         } catch (Exception e) {
-          //do nothing
-        }*/
+            //do nothing
+        }
     }
 
     @Test
@@ -95,9 +91,12 @@ public class CompanyDaoTestSuite {
         agnieszkaHolland.getCompanies().add(ubisoft);
         agnieszkaHolland.getCompanies().add(blizzard);
 
-        companyDao.save(microsoft);
-        companyDao.save(ubisoft);
-        companyDao.save(blizzard);
+            companyDao.save(microsoft);
+            int microsoftId = microsoft.getId();
+            companyDao.save(ubisoft);
+            int ubisoftId = ubisoft.getId();
+            companyDao.save(blizzard);
+            int blizzardId = blizzard.getId();
 
         //When
         List<Employee> lastName = employeeDao.retrieveEmployeeLike("wals");
@@ -108,13 +107,13 @@ public class CompanyDaoTestSuite {
         Assert.assertEquals(2, nameStartedWith.size());
 
         //CleanUp
-        /*try {
-          companyDao.delete(microsoftId);
-           companyDao.delete(ubisoftId);
-           companyDao.delete(blizzardId);
+       try {
+          companyDao.delete(microsoft);
+           companyDao.delete(ubisoft);
+           companyDao.delete(blizzard);
         } catch (Exception e) {
           //do nothing
-        }*/
+        }
 
     }
 }
