@@ -1,29 +1,35 @@
-package com.kodilla.hibernate.manytomany.dao;
+package com.kodilla.hibernate.manytomany.facade;
 
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
-import org.junit.Assert;
-import org.junit.Test;
+import com.kodilla.hibernate.manytomany.dao.CompanyDao;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@Transactional
-public class CompanyDaoTestSuite {
+public class CompanyEmployeeSearchFacadeTest {
+
     @Autowired
-    CompanyDao companyDao;
+    private CompanyEmployeeSearchFacade companyEmployeeSearchFacade;
     @Autowired
-    EmployeeDao employeeDao;
+    private CompanyDao companyDao;
+
+    private ArrayList<Company> resultCompanyList = new ArrayList<>();
+    private ArrayList<Employee> resultEmployeeList = new ArrayList<>();
+
 
     @Test
-    public void testSaveManyToMany() {
-        //Given
+    public void retrieveCompanyLikeTest() {
+
+/*        //Given
         Employee janKowalski = new Employee("Jan", "Kowalski");
         Employee andrzejNowak = new Employee("Andrzej", "Nowak");
         Employee agnieszkaHolland = new Employee("Agnieszka", "Holland");
@@ -48,33 +54,31 @@ public class CompanyDaoTestSuite {
         companyDao.save(ubisoft);
         companyDao.save(blizzard);
 
+        resultCompanyList.add(microsoft);
+        resultCompanyList.add(ubisoft);
+
+        resultEmployeeList.add(janKowalski);
+        resultEmployeeList.add(agnieszkaHolland);
         //When
-        companyDao.save(microsoft);
-        int microsoftId = microsoft.getId();
-        companyDao.save(ubisoft);
-        int ubisoftId = ubisoft.getId();
-        companyDao.save(blizzard);
-        int blizzardId = blizzard.getId();
-
+        List<Company> queryResult = companyEmployeeSearchFacade.retrieveCompanyLike("oft");
         //Then
-        Assert.assertNotEquals(0, microsoftId);
-        Assert.assertNotEquals(0, ubisoftId);
-        Assert.assertNotEquals(0, blizzardId);
-
+        Assert.assertEquals(resultCompanyList.size(), queryResult.size());
         //CleanUp
-        /*try {
-          companyDao.delete(microsoftId);
-           companyDao.delete(ubisoftId);
-           companyDao.delete(blizzardId);
+        try {
+            companyDao.delete(microsoft);
+            companyDao.delete(ubisoft);
+            companyDao.delete(blizzard);
         } catch (Exception e) {
-          //do nothing
+            //do nothing
         }*/
+
     }
 
     @Test
-    public void testNamedQueries(){
+    public void retrieveEmployeeLikeTest() {
 
-        //Given
+/*        //Given
+
         Employee janKowalski = new Employee("Jan", "Kowalski");
         Employee andrzejNowak = new Employee("Andrzej", "Nowak");
         Employee agnieszkaHolland = new Employee("Agnieszka", "Holland");
@@ -99,22 +103,24 @@ public class CompanyDaoTestSuite {
         companyDao.save(ubisoft);
         companyDao.save(blizzard);
 
+        resultCompanyList.add(microsoft);
+        resultCompanyList.add(ubisoft);
+
+        resultEmployeeList.add(janKowalski);
+        resultEmployeeList.add(agnieszkaHolland);
+
+
         //When
-        List<Employee> lastName = employeeDao.retrieveEmployeeLike("wals");
-        List<Company> nameStartedWith = companyDao.retrieveCompanyNameLike("sof");
-
+        List<Employee> queryResult = companyEmployeeSearchFacade.retrieveEmployeeLike("als");
         //Then
-        Assert.assertEquals(1, lastName.size());
-        Assert.assertEquals(2, nameStartedWith.size());
+        Assert.assertEquals(resultEmployeeList.size(), queryResult.size());
 
-        //CleanUp
-        /*try {
-          companyDao.delete(microsoftId);
-           companyDao.delete(ubisoftId);
-           companyDao.delete(blizzardId);
+        try {
+            companyDao.delete(microsoft);
+            companyDao.delete(ubisoft);
+            companyDao.delete(blizzard);
         } catch (Exception e) {
-          //do nothing
+            //do nothing
         }*/
-
     }
 }

@@ -4,8 +4,10 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.*;
 
-@NamedNativeQuery(name = "Company.first3LettersSearch", query = "SELECT * FROM COMPANIES" +
-        " WHERE SUBSTRING(COMPANY_NAME from 1 for 3) = :FIRSTLETTERS", resultClass = Company.class)
+@NamedNativeQuery(name = "Company.retrieveCompanyNameLike",
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT('%', :NAME , '%')",
+        resultClass = Company.class)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
