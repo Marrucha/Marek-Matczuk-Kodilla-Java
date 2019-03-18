@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 
 
 @Service
-//@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy
 public class OrderFacade {
     @Autowired
     private ShopService shopService;
